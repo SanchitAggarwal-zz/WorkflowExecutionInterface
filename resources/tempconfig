@@ -1,0 +1,78 @@
+user-identifier
+  minOccuurs=0
+  maxOccurs=1
+  description=User that the workflow is executed on behalf of,user id is used to catalog data and for monitoring purposes
+
+soa-service-eprs
+  minOccuurs=1
+  maxOccurs=1
+  dedescription=Element that contains persistant service end points within the system.
+  gfac-url=WWW.ACN.COM
+  registry-url=WWW.ASD.COM
+  resource-scheduler-url=abcd
+  hostDescriptortype="string"
+
+workflow-monitoring-context
+  minOccurs=1
+  maxOccurs=1
+  experiment-id="string"
+  workflow-instance-ide="anyURI"
+  workflow-template-id="anyURI"
+  workflow-node-id=STRING
+  workflow-time-step=1
+  service-instance-id=WWW.yURI.COM
+  service-replica-id=WWW.anyURI.COM
+  event-publish-epr=WWW.anyURI.COM
+  notification-topic=string
+  error-publish-epr=WWW.anyURI.COM
+  msg-box-epr=WWW.anyURI.COM
+
+workflow-scheduling-context
+  minOccurs=0
+  maxOccurs=1
+  nameValuePairType
+    workflow-node-id=string
+    name=string
+    value=string
+    description=string
+  application-scheduling-context
+    workflow-node-id=string
+    Service-id=WWW.anyURI.COM
+    Host-name=www.anyURI.com
+    wsgram-preferred=true
+    gatekeeper-epr=anyURI
+    job-managerstring
+    name=cpu-count=int
+    node-count=int
+    queue-name=string
+    name="max-wall-time"=int
+
+workflow-output-data-handling
+  minOccurs=0
+  maxOccurs=1
+  application-output-data-handling
+    node-id=string
+    data-registry-url=anyURI
+    output-data-directory=anyURI
+    data-persistance=boolean
+security-context
+  minOccurs=0
+  maxOccurs=1
+  grid-proxyy
+  grid-myproxy-repository
+    myproxy-server=string
+    username=string
+    password=string
+    life-time-inhours=int
+  ssh-authentication
+    access-key-id=string
+    secret-access-key=string
+  credential-management-service
+    token_id=string
+    name=portal-user=string
+  amazon-webservices
+    access-key-id=string
+    secret-access-key=string
+    ami-id=string
+    instance-id=string
+    instance-type=string

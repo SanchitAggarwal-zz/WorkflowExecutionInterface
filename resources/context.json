@@ -1,0 +1,376 @@
+{
+    "type":"object",
+    "$schema": "http://json-schema.org/draft-03/schema",
+    "id": "http://jsonschema.net",
+    "required":false,
+    "properties":{
+        "security-context": {
+            "type":"object",
+            "id": "http://jsonschema.net/security-context",
+            "required":false,
+            "properties":{
+                "amazon-webservices": {
+                    "type":"object",
+                    "id": "http://jsonschema.net/security-context/amazon-webservices",
+                    "required":false,
+                    "properties":{
+                        "access": {
+                            "type":"string",
+                            "id": "http://jsonschema.net/security-context/amazon-webservices/access",
+                            "required":false
+                        },
+                        "ami": {
+                            "type":"string",
+                            "id": "http://jsonschema.net/security-context/amazon-webservices/ami",
+                            "required":false
+                        },
+                        "instance": {
+                            "type":"string",
+                            "id": "http://jsonschema.net/security-context/amazon-webservices/instance",
+                            "required":false
+                        },
+                        "secret": {
+                            "type":"string",
+                            "id": "http://jsonschema.net/security-context/amazon-webservices/secret",
+                            "required":false
+                        },
+                        "username": {
+                            "type":"string",
+                            "id": "http://jsonschema.net/security-context/amazon-webservices/username",
+                            "required":false
+                        }
+                    }
+                },
+                "credential-management-service": {
+                    "type":"object",
+                    "id": "http://jsonschema.net/security-context/credential-management-service",
+                    "required":false,
+                    "properties":{
+                        "name": {
+                            "type":"string",
+                            "id": "http://jsonschema.net/security-context/credential-management-service/name",
+                            "required":false
+                        },
+                        "token_id": {
+                            "type":"string",
+                            "id": "http://jsonschema.net/security-context/credential-management-service/token_id",
+                            "required":false
+                        }
+                    }
+                },
+                "grid-myproxy-repository": {
+                    "type":"object",
+                    "id": "http://jsonschema.net/security-context/grid-myproxy-repository",
+                    "required":false,
+                    "properties":{
+                        "life": {
+                            "type":"string",
+                            "id": "http://jsonschema.net/security-context/grid-myproxy-repository/life",
+                            "required":false
+                        },
+                        "myproxy": {
+                            "type":"string",
+                            "id": "http://jsonschema.net/security-context/grid-myproxy-repository/myproxy",
+                            "required":false
+                        },
+                        "password": {
+                            "type":"string",
+                            "id": "http://jsonschema.net/security-context/grid-myproxy-repository/password",
+                            "required":false
+                        },
+                        "username": {
+                            "type":"string",
+                            "id": "http://jsonschema.net/security-context/grid-myproxy-repository/username",
+                            "required":false
+                        }
+                    }
+                },
+                "grid-proxyy": {
+                    "type":"object",
+                    "id": "http://jsonschema.net/security-context/grid-proxyy",
+                    "required":false
+                },
+                "maxOccurs": {
+                    "type":"string",
+                    "id": "http://jsonschema.net/security-context/maxOccurs",
+                    "required":false
+                },
+                "minOccurs": {
+                    "type":"string",
+                    "id": "http://jsonschema.net/security-context/minOccurs",
+                    "required":false
+                },
+                "ssh-authentication": {
+                    "type":"object",
+                    "id": "http://jsonschema.net/security-context/ssh-authentication",
+                    "required":false,
+                    "properties":{
+                        "access": {
+                            "type":"string",
+                            "id": "http://jsonschema.net/security-context/ssh-authentication/access",
+                            "required":false
+                        },
+                        "secret": {
+                            "type":"string",
+                            "id": "http://jsonschema.net/security-context/ssh-authentication/secret",
+                            "required":false
+                        }
+                    }
+                }
+            }
+        },
+        "soa-service-eprs": {
+            "type":"object",
+            "id": "http://jsonschema.net/soa-service-eprs",
+            "required":false,
+            "properties":{
+                "dedescription": {
+                    "type":"string",
+                    "id": "http://jsonschema.net/soa-service-eprs/dedescription",
+                    "required":false
+                },
+                "gfac": {
+                    "type":"string",
+                    "id": "http://jsonschema.net/soa-service-eprs/gfac",
+                    "required":false
+                },
+                "hostDescriptortype": {
+                    "type":"string",
+                    "id": "http://jsonschema.net/soa-service-eprs/hostDescriptortype",
+                    "required":false
+                },
+                "maxOccurs": {
+                    "type":"string",
+                    "id": "http://jsonschema.net/soa-service-eprs/maxOccurs",
+                    "required":false
+                },
+                "minOccuurs": {
+                    "type":"string",
+                    "id": "http://jsonschema.net/soa-service-eprs/minOccuurs",
+                    "required":false
+                },
+                "registry": {
+                    "type":"string",
+                    "id": "http://jsonschema.net/soa-service-eprs/registry",
+                    "required":false
+                },
+                "resource": {
+                    "type":"string",
+                    "id": "http://jsonschema.net/soa-service-eprs/resource",
+                    "required":false
+                }
+            }
+        },
+        "user-identifier": {
+            "type":"object",
+            "id": "http://jsonschema.net/user-identifier",
+            "required":false,
+            "properties":{
+                "description": {
+                    "type":"string",
+                    "id": "http://jsonschema.net/user-identifier/description",
+                    "required":false
+                },
+                "maxOccurs": {
+                    "type":"string",
+                    "id": "http://jsonschema.net/user-identifier/maxOccurs",
+                    "required":false
+                },
+                "minOccuurs": {
+                    "type":"string",
+                    "id": "http://jsonschema.net/user-identifier/minOccuurs",
+                    "required":false
+                }
+            }
+        },
+        "workflow-monitoring-context": {
+            "type":"object",
+            "id": "http://jsonschema.net/workflow-monitoring-context",
+            "required":false,
+            "properties":{
+                "error": {
+                    "type":"string",
+                    "id": "http://jsonschema.net/workflow-monitoring-context/error",
+                    "required":false
+                },
+                "event": {
+                    "type":"string",
+                    "id": "http://jsonschema.net/workflow-monitoring-context/event",
+                    "required":false
+                },
+                "experiment": {
+                    "type":"string",
+                    "id": "http://jsonschema.net/workflow-monitoring-context/experiment",
+                    "required":false
+                },
+                "maxOccurs": {
+                    "type":"string",
+                    "id": "http://jsonschema.net/workflow-monitoring-context/maxOccurs",
+                    "required":false
+                },
+                "minOccurs": {
+                    "type":"string",
+                    "id": "http://jsonschema.net/workflow-monitoring-context/minOccurs",
+                    "required":false
+                },
+                "msg": {
+                    "type":"string",
+                    "id": "http://jsonschema.net/workflow-monitoring-context/msg",
+                    "required":false
+                },
+                "notification": {
+                    "type":"string",
+                    "id": "http://jsonschema.net/workflow-monitoring-context/notification",
+                    "required":false
+                },
+                "service": {
+                    "type":"string",
+                    "id": "http://jsonschema.net/workflow-monitoring-context/service",
+                    "required":false
+                },
+                "workflow": {
+                    "type":"string",
+                    "id": "http://jsonschema.net/workflow-monitoring-context/workflow",
+                    "required":false
+                }
+            }
+        },
+        "workflow-output-data-handling": {
+            "type":"object",
+            "id": "http://jsonschema.net/workflow-output-data-handling",
+            "required":false,
+            "properties":{
+                "application-output-data-handling": {
+                    "type":"object",
+                    "id": "http://jsonschema.net/workflow-output-data-handling/application-output-data-handling",
+                    "required":false,
+                    "properties":{
+                        "data": {
+                            "type":"string",
+                            "id": "http://jsonschema.net/workflow-output-data-handling/application-output-data-handling/data",
+                            "required":false
+                        },
+                        "node": {
+                            "type":"string",
+                            "id": "http://jsonschema.net/workflow-output-data-handling/application-output-data-handling/node",
+                            "required":false
+                        },
+                        "output": {
+                            "type":"string",
+                            "id": "http://jsonschema.net/workflow-output-data-handling/application-output-data-handling/output",
+                            "required":false
+                        }
+                    }
+                },
+                "maxOccurs": {
+                    "type":"string",
+                    "id": "http://jsonschema.net/workflow-output-data-handling/maxOccurs",
+                    "required":false
+                },
+                "minOccurs": {
+                    "type":"string",
+                    "id": "http://jsonschema.net/workflow-output-data-handling/minOccurs",
+                    "required":false
+                }
+            }
+        },
+        "workflow-scheduling-context": {
+            "type":"object",
+            "id": "http://jsonschema.net/workflow-scheduling-context",
+            "required":false,
+            "properties":{
+                "application-scheduling-context": {
+                    "type":"object",
+                    "id": "http://jsonschema.net/workflow-scheduling-context/application-scheduling-context",
+                    "required":false,
+                    "properties":{
+                        "Host": {
+                            "type":"string",
+                            "id": "http://jsonschema.net/workflow-scheduling-context/application-scheduling-context/Host",
+                            "required":false
+                        },
+                        "Service": {
+                            "type":"string",
+                            "id": "http://jsonschema.net/workflow-scheduling-context/application-scheduling-context/Service",
+                            "required":false
+                        },
+                        "gatekeeper": {
+                            "type":"string",
+                            "id": "http://jsonschema.net/workflow-scheduling-context/application-scheduling-context/gatekeeper",
+                            "required":false
+                        },
+                        "job-managerstring": {
+                            "type":"object",
+                            "id": "http://jsonschema.net/workflow-scheduling-context/application-scheduling-context/job-managerstring",
+                            "required":false,
+                            "properties":{
+                                "name": {
+                                    "type":"string",
+                                    "id": "http://jsonschema.net/workflow-scheduling-context/application-scheduling-context/job-managerstring/name",
+                                    "required":false
+                                },
+                                "node": {
+                                    "type":"string",
+                                    "id": "http://jsonschema.net/workflow-scheduling-context/application-scheduling-context/job-managerstring/node",
+                                    "required":false
+                                },
+                                "queue": {
+                                    "type":"string",
+                                    "id": "http://jsonschema.net/workflow-scheduling-context/application-scheduling-context/job-managerstring/queue",
+                                    "required":false
+                                }
+                            }
+                        },
+                        "workflow": {
+                            "type":"string",
+                            "id": "http://jsonschema.net/workflow-scheduling-context/application-scheduling-context/workflow",
+                            "required":false
+                        },
+                        "wsgram": {
+                            "type":"string",
+                            "id": "http://jsonschema.net/workflow-scheduling-context/application-scheduling-context/wsgram",
+                            "required":false
+                        }
+                    }
+                },
+                "maxOccurs": {
+                    "type":"string",
+                    "id": "http://jsonschema.net/workflow-scheduling-context/maxOccurs",
+                    "required":false
+                },
+                "minOccurs": {
+                    "type":"string",
+                    "id": "http://jsonschema.net/workflow-scheduling-context/minOccurs",
+                    "required":false
+                },
+                "nameValuePairType": {
+                    "type":"object",
+                    "id": "http://jsonschema.net/workflow-scheduling-context/nameValuePairType",
+                    "required":false,
+                    "properties":{
+                        "description": {
+                            "type":"string",
+                            "id": "http://jsonschema.net/workflow-scheduling-context/nameValuePairType/description",
+                            "required":false
+                        },
+                        "name": {
+                            "type":"string",
+                            "id": "http://jsonschema.net/workflow-scheduling-context/nameValuePairType/name",
+                            "required":false
+                        },
+                        "value": {
+                            "type":"string",
+                            "id": "http://jsonschema.net/workflow-scheduling-context/nameValuePairType/value",
+                            "required":false
+                        },
+                        "workflow": {
+                            "type":"string",
+                            "id": "http://jsonschema.net/workflow-scheduling-context/nameValuePairType/workflow",
+                            "required":false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

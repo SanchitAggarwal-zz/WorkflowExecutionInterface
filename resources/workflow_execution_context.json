@@ -1,0 +1,84 @@
+{
+    "user-identifier": {
+        "minOccuurs": "0",
+        "maxOccurs": "1",
+        "description": "User that the workflow is executed on behalf of,user id is used to catalog data and for monitoring purposes"
+    },
+    "soa-service-eprs": {
+        "minOccuurs": "1",
+        "maxOccurs": "1",
+        "dedescription": "Element that contains persistant service end points within the system.",
+        "gfac": "WWW.ACN.COM",
+        "registry": "WWW.ASD.COM",
+        "resource": "abcd",
+        "hostDescriptortype": "string"
+    },
+    "workflow-monitoring-context": {
+        "minOccurs": "1",
+        "maxOccurs": "1",
+        "experiment": "string",
+        "workflow": "1",
+        "service": "WWW.anyURI.COM",
+        "event": "WWW.anyURI.COM",
+        "notification": "string",
+        "error": "WWW.anyURI.COM",
+        "msg": "WWW.anyURI.COM"
+    },
+    "workflow-scheduling-context": {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "nameValuePairType": {
+            "workflow": "string",
+            "name": "string",
+            "value": "string",
+            "description": "string"
+        },
+        "application-scheduling-context": {
+            "workflow": "string",
+            "Service": "WWW.anyURI.COM",
+            "Host": "www.anyURI.com",
+            "wsgram": "true",
+            "gatekeeper": "anyURI",
+            "job-managerstring": {
+                "name": "int",
+                "node": "int",
+                "queue": "string"
+            }
+        }
+    },
+    "workflow-output-data-handling": {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "application-output-data-handling": {
+            "node": "string",
+            "data": "boolean",
+            "output": "anyURI"
+        }
+    },
+    "security-context": {
+        "minOccurs": "0",
+        "maxOccurs": "1",
+        "grid-proxyy": {},
+        "grid-myproxy-repository": {
+            "myproxy": "string",
+            "username": "string",
+            "password": "string",
+            "life": "int"
+        },
+        "ssh-authentication": {
+            "access": "string",
+            "secret": "string"
+        },
+        "credential-management-service": {
+            "token_id": "string",
+            "name": "string"
+        },
+        "amazon-webservices": {
+            "access": "string",
+            "secret": "string",
+            "ami": "string",
+            "instance": "string",
+            "username": "string"
+        }
+    }
+}
