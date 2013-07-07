@@ -1,7 +1,7 @@
 {
     "project":{
             "name": "Workflow Execution Interface",
-            "description": "Web-based Workflow Execution Interface for Apache Airavata, part of the master project for web-based Xbaya",
+            "description": "Execution Interface for Apache Airavata, part of the master project for web-based XBaya",
             "organization": "The Apache Software Foundation",
             "community":"Apache Airavata",
             "url": "http://airavata.apache.org//",
