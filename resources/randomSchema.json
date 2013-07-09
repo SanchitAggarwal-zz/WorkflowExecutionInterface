@@ -1,0 +1,9 @@
+{"type": "object",
+    "properties": {"name": {"type": "string"},
+        "address": {"type": "string"},
+        "zip": {"type": "string"},
+        "country": {"type": "string"},
+        "date-of-birth": {"type": "string"},
+        "gender": {"type": "string"},
+        "email": {"type": "string"},
+        "phones": {"type": "object"}}
