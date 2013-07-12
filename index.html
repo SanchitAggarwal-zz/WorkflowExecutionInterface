@@ -21,6 +21,7 @@
 
         <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
         <link rel="stylesheet" href="css/vendor/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="css/main.css">
 
     </head>
     <body>
@@ -43,8 +44,8 @@
                     <a class="brand" href="#">Execution Interface</a>
                     <div class="nav-collapse collapse">
                         <ul class="nav">
-                            <li class="run"><a href="#runModal" role="button" data-toggle="modal"><i class="icon-play"></i> Run</a></li>
-                            <li class="stop"><a href="#stop"><i class="icon-stop"></i> Stop</a></li>
+                            <li class="run"><a href="#runModal" role="button" data-toggle="modal"><i class="icon-play icon-white"></i> Run</a></li>
+                            <li class="stop"><a href="#stop"><i class="icon-stop icon-white"></i> Stop</a></li>
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div>
@@ -66,19 +67,19 @@
             <div class="modal-body">
                 <form class="form-horizontal"  ui-keypress="{enter : 'run()'}">
                     <div class="control-group">
-                        <label class="control-label" for="inputExperimentName"><i class=" icon-pencil"></i></label>
+                        <label class="control-label" for="inputExperimentName"><i class=" icon-pencil icon-white"></i></label>
                         <div class="controls">
                             <input type="text" id="inputExperimentName" placeholder="Experiment Name" ng-model="name">
                         </div>
                     </div>
                     <div class="control-group">
-                        <label class="control-label" for="inputWorkflowInterpreterURL"><i class=" icon-upload"></i></label>
+                        <label class="control-label" for="inputWorkflowInterpreterURL"><i class=" icon-upload icon-white"></i></label>
                         <div class="controls">
                             <input type="url" id="inputWorkflowInterpreterURL" placeholder="Workflow Interpreter URL" ng-model="interpreterURL">
                         </div>
                     </div>
                     <div class="control-group">
-                        <label class="control-label" for="inputGFacURL"><i class=" icon-upload"></i></label>
+                        <label class="control-label" for="inputGFacURL"><i class=" icon-upload icon-white"></i></label>
                         <div class="controls">
                             <input type="url" id="inputGFacURL" placeholder="GFac URL" ng-model="GFacURL">
                         </div>
