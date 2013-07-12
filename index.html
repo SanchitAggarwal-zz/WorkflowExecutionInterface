@@ -64,7 +64,26 @@
                 <h3 id="runModal">Launch Workflow</h3>
             </div>
             <div class="modal-body">
-                <p>One fine body…</p>
+                <form class="form-horizontal"  ui-keypress="{enter : 'run()'}">
+                    <div class="control-group">
+                        <label class="control-label" for="inputExperimentName"><i class=" icon-pencil"></i></label>
+                        <div class="controls">
+                            <input type="text" id="inputExperimentName" placeholder="Experiment Name" ng-model="name">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputWorkflowInterpreterURL"><i class=" icon-upload"></i></label>
+                        <div class="controls">
+                            <input type="url" id="inputWorkflowInterpreterURL" placeholder="Workflow Interpreter URL" ng-model="interpreterURL">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputGFacURL"><i class=" icon-upload"></i></label>
+                        <div class="controls">
+                            <input type="url" id="inputGFacURL" placeholder="GFac URL" ng-model="GFacURL">
+                        </div>
+                    </div>
+                </form>
             </div>
             <div class="modal-footer">
                 <button class="btn">Run</button><button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
