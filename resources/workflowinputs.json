@@ -1,0 +1,28 @@
+{
+    "graphs":[
+        {
+            "templateId":1,
+            "workflowInputs":[
+                {"id":"x","name": "X","datatype":"int","value":0},
+                {"id":"y","name": "Y","datatype":"int","value":0}
+            ]
+        },
+        {
+            "templateId":2,
+            "workflowInputs":[
+                {"id":"x","name": "X","datatype":"int","value":0},
+                {"id":"y","name": "Y","datatype":"int","value":0},
+                {"id":"z","name": "z","datatype":"int","value":0},
+                {"id":"w","name": "w","datatype":"int","value":0}
+            ]
+        },
+        {
+            "templateId":3,
+            "workflowInputs":[
+                {"id":"101","name": "First Name","datatype":"string","value":0},
+                {"id":"102","name": "Last Name","datatype":"string","value":0},
+                {"id":"103","name": "Age","datatype":"int","value":0}
+            ]
+        }
+    ]
+}

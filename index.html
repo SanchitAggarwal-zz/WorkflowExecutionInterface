@@ -55,10 +55,10 @@
                 <div class="control-group" ng-repeat="input in workflowInputs">
                     <label class="control-label" for={{input.id}}>{{input.name}}  {{input.datatype}}</label>
                     <div class="controls">
-                        <input type="text" id={{input.id}} placeholder={{input.name}}>
+                        <input type="text" id={{input.id}} placeholder={{input.value}}>
                     </div>
                 </div>
-                <div class="control-group">
+                <!--<div class="control-group">
                     <label class="control-label" for="inputExperimentName"><i class=" icon-pencil icon-white"></i></label>
                     <div class="controls">
                         <input type="text" id="inputExperimentName" placeholder="Experiment Name" ng-model="name">
@@ -75,7 +75,7 @@
                     <div class="controls">
                         <input type="url" id="inputGFacURL" placeholder="GFac URL" ng-model="GFacURL">
                     </div>
-                </div>
+                </div>  -->
             </form>
             </div>
             <div class="modal-footer">

@@ -8,24 +8,26 @@
 var executionInterface = angular.module('executionInterface',['ui']);
 
 
+//Main Controller for execution Interface
 var executionInterfaceCtrl=function ($scope,$http) {
 
     //Variables related to Run Workflow
 
     $scope.isWorkflowOpen=true;
     $scope.isWorkflowRunning=false;
-    $scope.workflowInputs=[
-        {id:"x",name: "X",datatype:"int"},
-        {id:"y",name: "Y",datatype:"int"}
-    ];
+    $scope.workflowInputs=[];
     $scope.experimentName='Experiment Name';
     $scope.workflowInterpreterURL='Workflow Interpreter URL';
     $scope.gfacURL='GFac URL';
     $scope.templateId='';
 
+    $scope.workflowInputs.push({"id":$scope.experimentName,"name":$scope.experimentName,"datatype":"","value":"Experiment Name"});
+    $scope.workflowInputs.push({"id":$scope.workflowInterpreterURL,"name":$scope.workflowInterpreterURL,"datatype":"","value":"Workflow Interpreter URL"});
+    $scope.workflowInputs.push({"id":$scope.gfacURL,"name":$scope.gfacURL,"datatype":"","value":"gfacURL"});
+
     //get the inputs for the open workflow to render run workflow modal
     $scope.getWorkflowInputs=function(){
-
+          //Airavata Client API call to get number of inputs for given template id
     };
 
     //validate the inputs
@@ -35,31 +37,7 @@ var executionInterfaceCtrl=function ($scope,$http) {
 
     //run experiment
     $scope.runExperiment=function(){
-
+         //Airavata client API call to run experiment with
     };
 
-    $scope.todos = [
-        {text:'learn angular', done:true},
-        {text:'build an angular app', done:false}];
-
-    $scope.addTodo = function() {
-        $scope.todos.push({text:$scope.todoText, done:false});
-        $scope.todoText = '';
-    };
-
-    $scope.remaining = function() {
-        var count = 0;
-        angular.forEach($scope.todos, function(todo) {
-            count += todo.done ? 0 : 1;
-        });
-        return count;
-    };
-
-    $scope.archive = function() {
-        var oldTodos = $scope.todos;
-        $scope.todos = [];
-        angular.forEach(oldTodos, function(todo) {
-            if (!todo.done) $scope.todos.push(todo);
-        });
-    };
 }
