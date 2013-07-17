@@ -1,26 +1,39 @@
 /*
-*
-* Controllers for the execution interface
-*
+ *
+ * Controllers for the execution interface
+ *
  */
 
+// The angular module for the execution interface which depends on Angular-UI
+var executionInterface = angular.module('executionInterface',['ui']);
 
-// The angular module for the page
-var ExecutionInterface = angular.module('ExecutionInterface', ['ui.bootstrap']);
 
-
-var ExecutionInterfaceCtrl=function ($scope,$http) {
+var executionInterfaceCtrl=function ($scope,$http) {
 
     //Variables related to Run Workflow
 
-    $scope.WorkflowInputs=[];
-    $scope.ExperimentName='';
-    $scope.WorkflowInterpreterURL='/axis2/services/WorkflowInterpretor';
-    $scope.GFacURL='/axis2/services/GFacService';
+    $scope.isWorkflowOpen=false;
+    $scope.isWorkflowRunning=false;
+    $scope.workflowInputs=[];
+    $scope.experimentName='';
+    $scope.workflowInterpreterURL='/axis2/services/WorkflowInterpretor';
+    $scope.gfacURL='/axis2/services/GFacService';
+    $scope.templateId='';
 
+    //get the inputs for the open workflow
     $scope.getWorkflowInputs=function(){
 
-    }
+    };
+
+    //validate the inputs
+    $scope.validateInputs=function(){
+
+    };
+
+    //run experiment
+    $scope.runExperiment=function(){
+
+    };
 
     $scope.todos = [
         {text:'learn angular', done:true},
