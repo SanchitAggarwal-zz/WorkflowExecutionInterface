@@ -1,0 +1,53 @@
+{
+    "graph":{
+
+        "id":"workflow_1" ,
+        "name":"workflow",
+        "description":"first temp workflow",
+        "metadata":"none",
+        "node":[
+            {
+                "id":"x",
+                "name": "X",
+                "type":"input",
+                "inputPort":"",
+                "outputPort":"x",
+                "config":{
+                    "description":"na",
+                    "datatype":"int",
+                    "visibility":true,
+                    "value":10,
+                    "metadata":"na"
+                }
+            },
+            {
+                "id":"y",
+                "name": "Y",
+                "type":"input",
+                "inputPort":"",
+                "outputPort":"y",
+                "config":{
+                    "description":"na",
+                    "datatype":"int",
+                    "visibility":true,
+                    "value":20,
+                    "metadata":"na"
+                }
+            },
+            {
+                "id":"z",
+                "name": "return",
+                "type":"output",
+                "inputPort":"x",
+                "outputPort":"",
+                "config":{
+                    "description":"na",
+                    "datatype":"int",
+                    "visibility":true,
+                    "value":"",
+                    "metadata":"na"
+                }
+            }
+            ]
+    }
+}

@@ -1,10 +1,10 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
-
 body {
     font:14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight:300;
     background: #444 url(../img/bg_tile.png);
     color: #ddd;
+    padding-top: 60px;
+    padding-bottom: 40px;
 }
 
 body > .navbar .brand, body > .navbar .brand:hover {
