@@ -12,13 +12,12 @@
                 "type":"input",
                 "inputPort":"",
                 "outputPort":"x",
-                "config":{
-                    "description":"na",
-                    "datatype":"int",
-                    "visibility":true,
-                    "value":10,
-                    "metadata":"na"
-                }
+                "description":"na",
+                "datatype":"int",
+                "visibility":true,
+                "value":10,
+                "metadata":"na"
+
             },
             {
                 "id":"y",
@@ -26,13 +25,12 @@
                 "type":"input",
                 "inputPort":"",
                 "outputPort":"y",
-                "config":{
-                    "description":"na",
-                    "datatype":"int",
-                    "visibility":true,
-                    "value":20,
-                    "metadata":"na"
-                }
+                "description":"na",
+                "datatype":"int",
+                "visibility":true,
+                "value":20,
+                "metadata":"na"
+
             },
             {
                 "id":"z",
@@ -40,13 +38,11 @@
                 "type":"output",
                 "inputPort":"x",
                 "outputPort":"",
-                "config":{
-                    "description":"na",
-                    "datatype":"int",
-                    "visibility":true,
-                    "value":"",
-                    "metadata":"na"
-                }
+                "description":"na",
+                "datatype":"int",
+                "visibility":true,
+                "value":"",
+                "metadata":"na"
             }
             ]
     }

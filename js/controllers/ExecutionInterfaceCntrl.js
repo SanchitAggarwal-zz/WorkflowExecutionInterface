@@ -12,15 +12,18 @@ var executionInterfaceCtrl=function ($scope,$http) {
 
     //Variables related to Run Workflow
 
-    $scope.isWorkflowOpen=false;
+    $scope.isWorkflowOpen=true;
     $scope.isWorkflowRunning=false;
-    $scope.workflowInputs=[];
-    $scope.experimentName='';
-    $scope.workflowInterpreterURL='/axis2/services/WorkflowInterpretor';
-    $scope.gfacURL='/axis2/services/GFacService';
+    $scope.workflowInputs=[
+        {id:"x",name: "X",datatype:"int"},
+        {id:"y",name: "Y",datatype:"int"}
+    ];
+    $scope.experimentName='Experiment Name';
+    $scope.workflowInterpreterURL='Workflow Interpreter URL';
+    $scope.gfacURL='GFac URL';
     $scope.templateId='';
 
-    //get the inputs for the open workflow
+    //get the inputs for the open workflow to render run workflow modal
     $scope.getWorkflowInputs=function(){
 
     };
