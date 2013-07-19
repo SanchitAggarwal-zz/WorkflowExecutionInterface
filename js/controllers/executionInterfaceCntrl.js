@@ -15,15 +15,16 @@ var executionInterfaceCtrl=function ($scope,$http) {
 
     $scope.isWorkflowOpen=true;
     $scope.isWorkflowRunning=false;
-    $scope.workflowInputs=[];
+    $scope.workflowInputs=[{"id":"x","name": "X","datatype":"int","value":0},
+                {"id":"y","name": "Y","datatype":"int","value":0},{"id":"z","name": "Z","datatype":"int","value":0}];
     $scope.experimentName='Experiment Name';
     $scope.workflowInterpreterURL='Workflow Interpreter URL';
     $scope.gfacURL='GFac URL';
     $scope.templateId='';
 
-    $scope.workflowInputs.push({"id":$scope.experimentName,"name":$scope.experimentName,"datatype":"","value":"Experiment Name"});
-    $scope.workflowInputs.push({"id":$scope.workflowInterpreterURL,"name":$scope.workflowInterpreterURL,"datatype":"","value":"Workflow Interpreter URL"});
-    $scope.workflowInputs.push({"id":$scope.gfacURL,"name":$scope.gfacURL,"datatype":"","value":"gfacURL"});
+    //$scope.workflowInputs.push({"id":$scope.experimentName,"name":$scope.experimentName,"datatype":"","value":"Experiment Name"});
+    //$scope.workflowInputs.push({"id":$scope.workflowInterpreterURL,"name":$scope.workflowInterpreterURL,"datatype":"","value":"Workflow Interpreter URL"});
+    //$scope.workflowInputs.push({"id":$scope.gfacURL,"name":$scope.gfacURL,"datatype":"","value":"gfacURL"});
 
     //get the inputs for the open workflow to render run workflow modal
     $scope.getWorkflowInputs=function(){
