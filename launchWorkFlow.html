@@ -16,124 +16,88 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js" xmlns="http://www.w3.org/1999/html"> <!--<![endif]-->
-<html lang="en" ng-app="executionInterface">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Execution Interface, Apache Airavata</title>
-        <meta name="description" content="Workflow Execution Interface for Apache Airavata">
-        <meta name="viewport" content="width=device-width">
-        <meta name="author" content="Sanchit Aggarwal">
 
-        <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
-        <link rel="stylesheet" href="css/vendor/bootstrap-responsive.min.css">
-        <link rel="stylesheet" href="css/executionInterface.css">
-
-    </head>
-    <body ng-controller="executionInterfaceCtrl">
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please
-                <a href="http://browsehappy.com/">upgrade your browser</a> or
-                <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a>
-                to improve your experience.
-            </p>
-        <![endif]-->
-
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <a class="brand" href="#">Execution Interface</a>
-                    <ul class="nav">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-tasks"></i> XBaya<b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#" role="button" data-toggle="modal"><i class=" icon-star"></i> New Workflow</a></li>
-                                <li><a href="#addHostModal" role="button" data-toggle="modal"><i class="icon-plus-sign"></i> Add Host</a></li>
-                            </ul>
-                        </li>
-                        <li class="run"><a href="#runWorkflowModal" role="button" data-toggle="modal"><i class="icon-play icon-white"></i> Run</a></li>
-                        <li class="stop"><a ui-if="isWorkflowRunning" href="#stop"><i class="icon-stop icon-white"></i> Stop</a></li>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="#">Execution Interface</a>
+            <ul class="nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-tasks"></i> XBaya<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" role="button" data-toggle="modal"><i class=" icon-star"></i> New Workflow</a></li>
+                        <li><a href="#addHostModal" role="button" data-toggle="modal"><i class="icon-plus-sign"></i> Add Host</a></li>
                     </ul>
-                </div>
+                </li>
+                <li class="run"><a href="#runWorkflowModal" role="button" data-toggle="modal"><i class="icon-play icon-white"></i> Run</a></li>
+                <li class="stop"><a ui-if="isWorkflowRunning" href="#stop"><i class="icon-stop icon-white"></i> Stop</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="modal hide fade" id="runWorkflowModal" ui-if="isWorkflowOpen" aria-labelledby="runWorkflowModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3>Launch Workflow</h3>
+    </div>
+    <div class="modal-body">
+        <form class="form-horizontal">
+        <div class="control-group" ng-repeat="input in workflowInputs">
+            <label class="control-label" for={{input.id}}>{{input.name}}  {{input.datatype}}</label>
+            <div class="controls">
+                <input type="text" id={{input.id}} placeholder={{input.value}}>
             </div>
         </div>
-        <div class="modal hide fade" id="runWorkflowModal" ui-if="isWorkflowOpen" aria-labelledby="runWorkflowModal" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h3>Launch Workflow</h3>
-            </div>
-            <div class="modal-body">
-                <form class="form-horizontal">
-                <div class="control-group" ng-repeat="input in workflowInputs">
-                    <label class="control-label" for={{input.id}}>{{input.name}}  {{input.datatype}}</label>
-                    <div class="controls">
-                        <input type="text" id={{input.id}} placeholder={{input.value}}>
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="inputExperimentName"><i class=" icon-pencil icon-white"></i></label>
-                    <div class="controls">
-                        <input type="text" id="inputExperimentName" placeholder="Experiment Name" ng-model="name">
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="inputWorkflowInterpreterURL"><i class=" icon-upload icon-white"></i></label>
-                    <div class="controls">
-                        <input type="url" id="inputWorkflowInterpreterURL" placeholder="Workflow Interpreter URL" ng-model="interpreterURL">
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="inputGFacURL"><i class=" icon-upload icon-white"></i></label>
-                    <div class="controls">
-                        <input type="url" id="inputGFacURL" placeholder="GFac URL" ng-model="GFacURL">
-                    </div>
-                </div>
-            </form>
-            </div>
-            <div class="modal-footer">
-                <a href="#" class="btn btn-primary">Run</a>
-                <a href="#" class="btn " data-dismiss="modal" aria-hidden="true">Cancel</a>
+        <div class="control-group">
+            <label class="control-label" for="inputExperimentName"><i class=" icon-pencil icon-white"></i></label>
+            <div class="controls">
+                <input type="text" id="inputExperimentName" placeholder="Experiment Name" ng-model="name">
             </div>
         </div>
+        <div class="control-group">
+            <label class="control-label" for="inputWorkflowInterpreterURL"><i class=" icon-upload icon-white"></i></label>
+            <div class="controls">
+                <input type="url" id="inputWorkflowInterpreterURL" placeholder="Workflow Interpreter URL" ng-model="interpreterURL">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="inputGFacURL"><i class=" icon-upload icon-white"></i></label>
+            <div class="controls">
+                <input type="url" id="inputGFacURL" placeholder="GFac URL" ng-model="GFacURL">
+            </div>
+        </div>
+    </form>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn btn-primary">Run</a>
+        <a href="#" class="btn " data-dismiss="modal" aria-hidden="true">Cancel</a>
+    </div>
+</div>
 
-        <div class="modal hide fade" id="addHostModal" aria-labelledby="addHostModal" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h3>Register Host</h3>
+<div class="modal hide fade" id="addHostModal" aria-labelledby="addHostModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3>Register Host</h3>
+    </div>
+    <div class="modal-body">
+        <form class="form-horizontal">
+            <div class="control-group">
+                <label class="control-label" for="inputHostId"><i class=" icon-pencil icon-white"></i></label>
+                <div class="controls">
+                    <input type="text" id="inputHostId" placeholder="Host Id" ng-model="hostId">
+                </div>
             </div>
-            <div class="modal-body">
-                <form class="form-horizontal">
-                    <div class="control-group">
-                        <label class="control-label" for="inputHostId"><i class=" icon-pencil icon-white"></i></label>
-                        <div class="controls">
-                            <input type="text" id="inputHostId" placeholder="Host Id" ng-model="hostId">
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <label class="control-label" for="inputHostAddress"><i class=" icon-upload icon-white"></i></label>
-                        <div class="controls">
-                            <input type="url" id="inputHostAddress" placeholder="Host Address" ng-model="hostAddress">
-                        </div>
-                    </div>
-                </form>
+            <div class="control-group">
+                <label class="control-label" for="inputHostAddress"><i class=" icon-upload icon-white"></i></label>
+                <div class="controls">
+                    <input type="url" id="inputHostAddress" placeholder="Host Address" ng-model="hostAddress">
+                </div>
             </div>
-            <div class="modal-footer">
-                <a href="#" class="btn btn-primary">Save</a>
-                <a href="#" class="btn " data-dismiss="modal" aria-hidden="true">Cancel</a>
-            </div>
-        </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn btn-primary">Save</a>
+        <a href="#" class="btn " data-dismiss="modal" aria-hidden="true">Cancel</a>
+    </div>
+</div>
 
-        <script src="js/vendor/jquery-1.9.1.min.js"></script>
-        <script src="js/vendor/angular.min.js"></script>
-        <script src="js/vendor/angular-ui.min.js"></script>
-        <script src="js/vendor/bootstrap.min.js"></script>
-        <script src="js/vendor/tv4.min.js"></script>
-        <script src="js/controlers/executionInterfaceCtrl.js"></script>
-    </body>
-</html>
