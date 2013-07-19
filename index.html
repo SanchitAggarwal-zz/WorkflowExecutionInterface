@@ -36,7 +36,7 @@ under the License.
     <link rel="stylesheet" href="css/executionInterface.css">
 
 </head>
-    <body ng-controller="executionInterfaceCtrl">
+    <body ng-controller="executionInterfaceCntl">
         <!--[if lt IE 7]>
         <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please
             <a href="http://browsehappy.com/">upgrade your browser</a> or
@@ -44,16 +44,35 @@ under the License.
             to improve your experience.
         </p>
         <![endif]-->
-        <div ng-view></div>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="brand" href="#">Execution Interface</a>
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-tasks"></i> XBaya<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" role="button" data-toggle="modal"><i class=" icon-star"></i> New Workflow</a></li>
+                                <li><a href="#addHost" role="button" data-toggle="modal"><i class="icon-plus-sign"></i> Add Host</a></li>
+                                <li><a href="#newApplicationDeploy" role="button" data-toggle="modal"><i class="icon-plus-sign"></i> Register Application</a></li>
+                            </ul>
+                        </li>
+                        <li class="run"><a href="#launchWorkflow" role="button" data-toggle="modal"><i class="icon-play icon-white"></i> Run Workflow</a></li>
+                        <li class="stop"><a ui-if="isWorkflowRunning" href="#stop"><i class="icon-stop icon-white"></i> Stop Workflow</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container" ng-view></div>
 
         <!--javascript resource-->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/angular.min.js"><\/script>')</script>
         <script src="js/vendor/angular-ui.min.js"></script>
         <script src="js/vendor/bootstrap.min.js"></script>
         <script src="js/vendor/tv4.min.js"></script>
-        <script src="js/controlers/executionInterfaceCtrl.js"></script>
+        <script src="js/controlers/executionInterfaceCntl.js"></script>
     </body>
 </html>

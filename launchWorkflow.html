@@ -16,54 +16,64 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-
-<div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="navbar-inner">
-        <div class="container">
-            <a class="brand" href="#">Execution Interface</a>
-            <ul class="nav">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-tasks"></i> XBaya<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#" role="button" data-toggle="modal"><i class=" icon-star"></i> New Workflow</a></li>
-                        <li><a href="#addHostModal" role="button" data-toggle="modal"><i class="icon-plus-sign"></i> Add Host</a></li>
-                    </ul>
-                </li>
-                <li class="run"><a href="#runWorkflowModal" role="button" data-toggle="modal"><i class="icon-play icon-white"></i> Run</a></li>
-                <li class="stop"><a ui-if="isWorkflowRunning" href="#stop"><i class="icon-stop icon-white"></i> Stop</a></li>
-            </ul>
-        </div>
+<!--<form class="form-horizontal" name="launchWorkflowForm">
+    <div class="control-group" ng-class="{error: launchWorkflowForm.name.$invalid}">
+        <label>Name</label>
+        <input type="text" name="name" ng-model="project.name" required>
+    <span ng-show="myForm.name.$error.required" class="help-inline">
+        Required</span>
     </div>
-</div>
-<div class="modal hide fade" id="runWorkflowModal" ui-if="isWorkflowOpen" aria-labelledby="runWorkflowModal" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <div class="control-group" ng-class="{error: myForm.site.$invalid}">
+        <label>Website</label>
+        <input type="url" name="site" ng-model="project.site" required>
+    <span ng-show="myForm.site.$error.required" class="help-inline">
+        Required</span>
+    <span ng-show="myForm.site.$error.url" class="help-inline">
+        Not a URL</span>
+    </div>
+
+    <label>Description</label>
+    <textarea name="description" ng-model="project.description"></textarea>
+
+    <br>
+    <a href="#/" class="btn">Cancel</a>
+    <button ng-click="save()" ng-disabled="isClean() || myForm.$invalid"
+            class="btn btn-primary">Save</button>
+    <button ng-click="destroy()"
+            ng-show="project.$id" class="btn btn-danger">Delete</button>
+</form> -->
+
+
+<div class="modal hide fade" id="launchWorkflow" ui-if="isWorkflowOpen" aria-labelledby="runWorkflowModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
         <h3>Launch Workflow</h3>
     </div>
     <div class="modal-body">
-        <form class="form-horizontal">
+    <form class="form-horizontal">
         <div class="control-group" ng-repeat="input in workflowInputs">
             <label class="control-label" for={{input.id}}>{{input.name}}  {{input.datatype}}</label>
             <div class="controls">
-                <input type="text" id={{input.id}} placeholder={{input.value}}>
+                <input type="text" id={{input.id}} placeholder={{input.value}} ng-model={{input.name}} required>
             </div>
         </div>
         <div class="control-group">
             <label class="control-label" for="inputExperimentName"><i class=" icon-pencil icon-white"></i></label>
             <div class="controls">
-                <input type="text" id="inputExperimentName" placeholder="Experiment Name" ng-model="name">
+                <input type="text" id="inputExperimentName" placeholder="Experiment Name" ng-model="experimentName" required>
             </div>
         </div>
         <div class="control-group">
             <label class="control-label" for="inputWorkflowInterpreterURL"><i class=" icon-upload icon-white"></i></label>
             <div class="controls">
-                <input type="url" id="inputWorkflowInterpreterURL" placeholder="Workflow Interpreter URL" ng-model="interpreterURL">
+                <input type="url" id="inputWorkflowInterpreterURL" placeholder="Workflow Interpreter URL" ng-model="workflowInterpreterURL" required>
             </div>
         </div>
         <div class="control-group">
             <label class="control-label" for="inputGFacURL"><i class=" icon-upload icon-white"></i></label>
             <div class="controls">
-                <input type="url" id="inputGFacURL" placeholder="GFac URL" ng-model="GFacURL">
+                <input type="url" id="inputGFacURL" placeholder="GFac URL" ng-model="gfacURL" required="">
             </div>
         </div>
     </form>
@@ -74,7 +84,7 @@ under the License.
     </div>
 </div>
 
-<div class="modal hide fade" id="addHostModal" aria-labelledby="addHostModal" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal hide fade" id="addHost" aria-labelledby="addHostModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
         <h3>Register Host</h3>
@@ -97,6 +107,43 @@ under the License.
     </div>
     <div class="modal-footer">
         <a href="#" class="btn btn-primary">Save</a>
+        <a href="#" class="btn " data-dismiss="modal" aria-hidden="true">Cancel</a>
+    </div>
+</div>
+
+
+<div class="modal hide fade" id="newApplicationDeploy" aria-labelledby="addHostModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3>New Application Deployment</h3>
+    </div>
+    <div class="modal-body">
+        <form class="form-horizontal">
+            <div class="control-group">
+                <label class="control-label" for="applicationHost">Application Host: </label>
+                <div class="controls">
+                    <select id="applicationHost"  ng-model="applicationHost" ng-options="host.name for host in hostList"></select> <a href="#addHost" role="button" data-toggle="modal"><i class="icon-plus-sign"></i> Add New Host</a>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="executablePath">Executable Path</label>
+                <div class="controls">
+                    <input type="url" id="executablePath" placeholder="Executable Path" ng-model="executablePath" required> <i class=" icon-folder-open icon-white"></i>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="scratchWorkingDirectory">Scratch Working Directory</label>
+                <div class="controls">
+                    <input type="url" id="scratchWorkingDirectory" placeholder="Scratch Working Directory" ng-model="scratchWorkingDirectory" required> <i class=" icon-folder-open icon-white"></i>
+                </div>
+            </div>
+            <div>
+                <a href="#" class="btn btn-primary">Advance Application Configuration</a>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn btn-primary">Add</a>
         <a href="#" class="btn " data-dismiss="modal" aria-hidden="true">Cancel</a>
     </div>
 </div>
